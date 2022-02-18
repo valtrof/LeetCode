@@ -58,22 +58,12 @@ public class Solution
     //    return res;
     //}
 
-    // 56.30, 58.28, recursive
-    public ListNode AddTwoNumbers(ListNode l1, ListNode l2)
+    // 66.95, 51.30, recursive
+    public ListNode AddTwoNumbers(ListNode l1, ListNode l2, int carry = 0)
     {
-        return NextNode(l1, l2, 0);
-    }
-
-    public ListNode NextNode(ListNode l1, ListNode l2, int carry)
-    {
-        if (l1 == null && l2 == null)
-        {
-            if (carry == 1) return new ListNode(1);
-            else return null;
-        }
-
+        if (l1 == null && l2 == null) return carry == 1 ? new ListNode(1) : null;
         var sum = (l1?.val ?? 0) + (l2?.val ?? 0) + carry;
-        return new ListNode(sum % 10, NextNode(l1?.next, l2?.next, sum / 10));
+        return new ListNode(sum % 10, AddTwoNumbers(l1?.next, l2?.next, sum / 10));
     }
 }
 
