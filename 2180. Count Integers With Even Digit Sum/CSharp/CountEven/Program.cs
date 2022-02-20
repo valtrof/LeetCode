@@ -1,12 +1,5 @@
 ﻿var s = new Solution();
 
-//Console.WriteLine("4: " + s.CountEven(4));
-//Console.WriteLine("30: " + s.CountEven(30));
-//Console.WriteLine("63: " + s.CountEven(63));
-//Console.WriteLine("20: " + s.CountEven(20));
-
-//Console.WriteLine("910: " + s.CountEven(910));
-
 for (int i = 1; i <= 10000; i++)
 {
     var c1 = s.CountEven(i);
